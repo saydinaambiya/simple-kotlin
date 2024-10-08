@@ -1,13 +1,31 @@
 package org.example
 
 fun main() {
-    val name = "Kotlin"
+    var programmingLanguage: String? = null;
+    val platform: String = "Android"
 
-    print(if (name.isBlank()) "Hello World" else "Hello $name")
+    if (platform == "Android") {
+        programmingLanguage = "Kotlin"
+    }
+    println("$platform $programmingLanguage");
+
+    // manipulation variables
+
+    var value = 1
+    value = value + 2
+
+    // another war
+    var anotherValue = 1
+    anotherValue += 2
+
+    println("value: $value and another value: $anotherValue");
 }
 
 /*
-    output:
-    if name is Kotlin: "Hello Kotlin"
-    if name is blank: "Hello World"
+    [variable]
+    var identifier: Type = initialization
+
+    [output]
+    Android Kotlin
+    value: 3 and another value: 3
  */
