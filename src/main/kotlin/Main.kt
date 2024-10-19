@@ -1,51 +1,26 @@
 package org.example
 
+import java.time.LocalDateTime
+
 fun main() {
-    // indexing
-    val firstText = "android"
-    val fourthCharacter = firstText[3]
-    println("The 4th character of the $firstText is $fourthCharacter")
-
-    val secondText = "kotlin"
-    for (character in secondText) {
-        print("$character ")
+    val year = LocalDateTime.now().year
+    val month = LocalDateTime.now().monthValue
+    val today = LocalDateTime.now().dayOfMonth
+    val openHours = LocalDateTime.of(year, month, today, 7, 0).hour
+    val now = LocalDateTime.now().hour
+    val office: String = if (now>openHours){
+        "Office already open"
+    }else if(now == openHours){
+        "Wait a minute, office will be open"
+    }else{
+        "Office is closed"
     }
-
-    // escaped
-    val statement = "Kotlin is \"Awesome!\""
-    val symbol = "Unicode test: \u00A9"
-    println(statement)
-    println(symbol)
-
-    // raw
-    val line = """
-        Line 1
-        Line 2
-        Line 3
-    """.trimIndent()
-    print(line)
+    print(office)
 }
 
 /*
     [output]
-    -- indexing --
-    The 4th character of the android is r
-    k o t l i n
+    depend on the hour this code will execute
 
-    -- escaped --
-    Kotlin is "Awesome!"
-    Unicode test: ©
-
-    -- raw --
-    Line 1
-    Line 2
-    Line 3
-
-    [explain]
-    -- escaped --
-    \t = tab
-    \n = new line
-    \' = single quote
-    \" = double quote
-    \\ = backslash
+    note: kotlin not support ternary operator cause replace by normal if expressions
  */
