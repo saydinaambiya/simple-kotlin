@@ -1,21 +1,51 @@
 package org.example
 
 fun main() {
-    var vocal = 'S'
+    // indexing
+    val firstText = "android"
+    val fourthCharacter = firstText[3]
+    println("The 4th character of the $firstText is $fourthCharacter")
 
-    for (a in 1..5) {
-        if (a >= 3) println(vocal--) else println(vocal++)
+    val secondText = "kotlin"
+    for (character in secondText) {
+        print("$character ")
     }
+
+    // escaped
+    val statement = "Kotlin is \"Awesome!\""
+    val symbol = "Unicode test: \u00A9"
+    println(statement)
+    println(symbol)
+
+    // raw
+    val line = """
+        Line 1
+        Line 2
+        Line 3
+    """.trimIndent()
+    print(line)
 }
 
 /*
     [output]
-    S
-    T
-    U
-    T
-    S
+    -- indexing --
+    The 4th character of the android is r
+    k o t l i n
+
+    -- escaped --
+    Kotlin is "Awesome!"
+    Unicode test: ©
+
+    -- raw --
+    Line 1
+    Line 2
+    Line 3
 
     [explain]
-    char is representation of Unicode(e.g A equals 0041, B equals 0042)
+    -- escaped --
+    \t = tab
+    \n = new line
+    \' = single quote
+    \" = double quote
+    \\ = backslash
  */
