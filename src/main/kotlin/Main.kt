@@ -2,19 +2,16 @@ package org.example
 
 
 fun main() {
-    var stringValue: String? = "Kotlin"
-    if (stringValue != null){ // in kotlin this called smart case
-        println(stringValue)
-    }
+    // safe call operator
+    val text: String? = null
+    text?.length
 
-    var obj: Any? = "Kotlin"
-    if (obj is String){
-        // no need extra casting as explicit
-        println("String length is ${obj.length}")
-    }
+    // elvis operator
+    val nullText: String? = null
+    val textLength = nullText?.length ?: 7
+    val nextTextLength = nullText!!.length
 }
 /*
     output:
-    Kotlin
-    String length is 6
+
  */
