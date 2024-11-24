@@ -2,21 +2,19 @@ package org.example
 
 
 fun main() {
-    val byteNumber: Byte = 10
-    val intNumber: Int = byteNumber.toInt()
-    println(intNumber)
+    var stringValue: String? = "Kotlin"
+    if (stringValue != null){ // in kotlin this called smart case
+        println(stringValue)
+    }
 
-    val stringNumber = "10"
-    val stringToIntNumber: Int = stringNumber.toInt()
-    println(stringToIntNumber)
-
-    val readableNumber = 1_000
-    println(readableNumber)
+    var obj: Any? = "Kotlin"
+    if (obj is String){
+        // no need extra casting as explicit
+        println("String length is ${obj.length}")
+    }
 }
-
 /*
-    [output]
-    10
-    10
-    1000
+    output:
+    Kotlin
+    String length is 6
  */
